@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ResumeCraft | Master Resume Builder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="authScreen" class="auth-wrap">
+  <section class="auth-visual">
+    <div class="brand light"><span class="brand-mark">R</span> ResumeCraft</div>
+    <div class="visual-copy"><span class="eyebrow">YOUR CAREER, YOUR STORY</span><h1>Build a resume that opens doors.</h1><p>Professional, colorful and profession-focused resume templates for every career stage.</p>
+      <div class="visual-pills"><span>Students</span><span>Freshers</span><span>Experienced</span><span>Professionals</span></div>
+    </div>
+    <div class="visual-note">Create • Customize • Download</div>
+  </section>
+  <section class="auth-panel">
+    <div class="auth-card">
+      <div class="brand"><span class="brand-mark">R</span> ResumeCraft</div>
+      <div class="auth-tabs"><button class="auth-tab active" data-mode="register">Create account</button><button class="auth-tab" data-mode="login">Sign in</button></div>
+      <h2 id="authTitle">Start your resume journey</h2><p class="muted" id="authSub">Register to create and save your master resume.</p>
+      <form id="authForm">
+        <label id="nameLabel">Full name</label><input id="authName" autocomplete="name" placeholder="e.g. Ananya Rao" required>
+        <label>Email address</label><input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <label>Password</label><input id="authPassword" type="password" minlength="6" autocomplete="new-password" placeholder="At least 6 characters" required>
+        <button class="primary full" type="submit" id="authSubmit">Create account <span>→</span></button>
+      </form>
+      <p class="fineprint">Demo mode: account details are stored in this browser only. Do not use a real or reused password.</p>
+      <p id="authMessage" class="message" aria-live="polite"></p>
+    </div>
+  </section>
+</div>
+
+<main id="app" class="hidden">
+<header class="topbar"><a class="brand" href="#"><span class="brand-mark">R</span> ResumeCraft</a><nav><a href="#builder">Builder</a><a href="#templates">Templates</a></nav><div class="user-area"><span id="welcomeName"></span><button class="outline small" id="logoutBtn">Sign out</button></div></header>
+<section class="hero">
+  <div class="hero-content"><span class="eyebrow">MASTER RESUME STUDIO</span><h1>One profile.<br><em>Many possibilities.</em></h1><p>Enter your details once, choose a design for your profession, and create a resume tailored to your next opportunity.</p><a href="#builder" class="primary hero-cta">Build my resume <span>↗</span></a></div>
+  <div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="floating-card card-back"><div class="fake-line short"></div><div class="fake-line"></div><div class="fake-line"></div><div class="fake-block"></div></div><div class="floating-card card-front"><div class="avatar">JD</div><div class="fake-line short"></div><div class="fake-line"></div><div class="fake-section"></div><div class="fake-line"></div><div class="fake-line"></div><div class="fake-section"></div><div class="fake-line"></div></div><div class="spark spark-a">✦</div><div class="spark spark-b">✧</div></div>
+</section>
+<section class="trust-strip"><span>Designed for every career stage</span><div><b>01</b> Students</div><div><b>02</b> Freshers</div><div><b>03</b> Experienced</div><div><b>04</b> Employees</div></section>
+
+<section class="workspace section" id="builder">
+ <div class="section-heading"><div><span class="eyebrow">YOUR WORKSPACE</span><h2>Build your master resume</h2><p class="muted">Complete the sections you need. Your preview updates as you type.</p></div><span class="save-status" id="saveStatus">● Saved in this browser</span></div>
+ <div class="builder-layout">
+  <form class="editor" id="resumeForm">
+   <div class="editor-top"><div><span class="step-label">PROFILE DETAILS</span><h3>Tell your story</h3></div><span class="edit-icon">✎</span></div>
+   <div class="form-grid">
+    <div class="field span2"><label>Career stage</label><select id="stage"><option>Student</option><option>Fresher</option><option>Experienced</option><option>Employee</option></select></div>
+    <div class="field"><label>Full name</label><input id="fullName" placeholder="Your name"></div><div class="field"><label>Professional title</label><input id="jobTitle" placeholder="e.g. UI/UX Designer"></div>
+    <div class="field"><label>Email</label><input id="email" type="email" placeholder="name@email.com"></div><div class="field"><label>Phone</label><input id="phone" placeholder="+91 98765 43210"></div>
+    <div class="field span2"><label>Location</label><input id="location" placeholder="City, State"></div>
+    <div class="field span2"><label>Professional summary</label><textarea id="summary" rows="3" placeholder="Write 2–4 lines about your goals, strengths and experience."></textarea></div>
+    <div class="field span2"><label>Education <small>One entry per line</small></label><textarea id="education" rows="3" placeholder="B.Tech Computer Science | ABC College | 2022–2026"></textarea></div>
+    <div class="field span2"><label>Experience / internships <small>One entry per line</small></label><textarea id="experience" rows="4" placeholder="Frontend Intern, XYZ Tech | Built responsive pages and improved usability | 2025"></textarea></div>
+    <div class="field span2"><label>Projects / achievements <small>One entry per line</small></label><textarea id="projects" rows="3" placeholder="Portfolio Website | Created a responsive personal portfolio"></textarea></div>
+    <div class="field span2"><label>Skills <small>Separate with commas</small></label><input id="skills" placeholder="HTML, CSS, JavaScript, Communication"></div>
+    <div class="field span2"><label>Certifications / additional details</label><textarea id="certifications" rows="2" placeholder="Certifications, languages, volunteering, awards..."></textarea></div>
+    <div class="field span2"><label>Profession focus</label><select id="profession"><option value="general">General / Business</option><option value="technology">Technology / IT</option><option value="creative">Creative / Design</option><option value="academic">Academic / Research</option><option value="management">Management / Operations</option><option value="healthcare">Healthcare</option></select></div>
+   </div>
+   <div class="editor-actions"><button type="button" class="outline" id="clearBtn">Clear form</button><button type="button" class="primary" id="previewBtn">Update preview →</button></div>
+  </form>
+  <aside class="preview-column">
+   <div class="preview-toolbar"><div><span class="step-label">LIVE PREVIEW</span><h3>Your resume</h3></div><button id="downloadBtn" class="primary download">Download PDF ↓</button></div>
+   <div class="template-picker" id="templates">
+    <div class="picker-label">Choose a template</div>
+    <div class="template-options">
+      <button class="template-choice active" data-template="modern"><span class="swatch modern-swatch"></span><b>Modern</b><small>Clean & versatile</small></button>
+      <button class="template-choice" data-template="classic"><span class="swatch classic-swatch"></span><b>Classic</b><small>Formal & traditional</small></button>
+      <button class="template-choice" data-template="creative"><span class="swatch creative-swatch"></span><b>Creative</b><small>Colorful & bold</small></button>
+      <button class="template-choice" data-template="minimal"><span class="swatch minimal-swatch"></span><b>Minimal</b><small>Simple & focused</small></button>
+    </div>
+    <p class="profession-hint" id="professionHint">Suggested for general and business roles. You can use any template for any profession.</p>
+   </div>
+   <article id="resumePreview" class="resume-paper modern">
+    <div class="resume-head"><h1 id="pName">Your Name</h1><p id="pTitle">Your Professional Title</p><div class="contact-line" id="pContact">email@example.com · +91 00000 00000 · City, State</div></div>
+    <div class="resume-body">
+     <section class="resume-section"><h2>Profile</h2><p id="pSummary">Your professional summary will appear here. Add a few lines about your experience, strengths and career goals.</p></section>
+     <section class="resume-section"><h2>Experience</h2><div id="pExperience" class="resume-lines"><p class="placeholder">Your experience and internships will appear here.</p></div></section>
+     <section class="resume-section"><h2>Education</h2><div id="pEducation" class="resume-lines"><p class="placeholder">Add your education details.</p></div></section>
+     <section class="resume-section"><h2>Projects & achievements</h2><div id="pProjects" class="resume-lines"><p class="placeholder">Add projects or achievements.</p></div></section>
+     <section class="resume-section"><h2>Skills</h2><div id="pSkills" class="skill-list"><span>Skills appear here</span></div></section>
+     <section class="resume-section"><h2>Additional details</h2><div id="pCertifications" class="resume-lines"></div></section>
+    </div>
+   </article>
+   <p class="preview-tip">Tip: For a PDF, select “Download PDF” and choose “Save as PDF” in your browser’s print dialog.</p>
+  </aside>
+ </div>
+</section>
+<section class="profession-section section"><div class="section-heading"><div><span class="eyebrow">CAREER-READY FORMATS</span><h2>Made for your profession</h2><p class="muted">Use the focus selector to tailor the resume structure and choose a visual style that fits your field.</p></div></div>
+ <div class="profession-grid">
+  <article class="profession-card"><div class="profession-icon tech">⌘</div><h3>Technology & IT</h3><p>Highlight technical skills, projects, tools, certifications and measurable outcomes.</p></article>
+  <article class="profession-card"><div class="profession-icon design">✳</div><h3>Creative & Design</h3><p>Bring forward portfolio work, design tools, creative projects and visual achievements.</p></article>
+  <article class="profession-card"><div class="profession-icon study">▤</div><h3>Students & Research</h3><p>Emphasize education, coursework, research, internships, awards and campus activities.</p></article>
+  <article class="profession-card"><div class="profession-icon work">↗</div><h3>Business & Management</h3><p>Show leadership, operations, communication, project delivery and business impact.</p></article>
+ </div>
+</section>
+<footer><div class="brand"><span class="brand-mark">R</span> ResumeCraft</div><p>Build with clarity. Present with confidence.</p><small>Demo application. Your profile is stored locally in this browser.</small></footer>
+</main>
+<script src="script.js"></script>
+</body></html>
